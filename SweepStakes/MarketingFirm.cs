@@ -11,9 +11,12 @@ namespace SweepStakes
         ISweepStakesManager _manager;
 
         //constructor
+        //this constructor injection lets the marketing firm handle wither the queueManager or StackManager
         public MarketingFirm(ISweepStakesManager _manager)
         {
             this._manager = _manager; 
+
+            
         }
 
         // method
