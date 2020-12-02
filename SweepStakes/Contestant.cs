@@ -6,17 +6,14 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    class Contestant : IUser
+    class Contestant
     {
         // member variables (has a)
-        private string _fName;
-        private string _lName;
-        private string _email;
-        private int _registrationNumber;
-        public string fName { get => _fName; set => _fName = value; }
-        public string lName { get => _lName; set => _lName = value; }
-        public string email { get => _email; set => _email = value; }
-        public int registrationNumber { get => _registrationNumber; }
+        public string fName;
+        public string lName;
+        public string email;
+        public int registrationNumber;
+
 
         // constructor (spawner)
         public Contestant()
@@ -27,7 +24,7 @@ namespace SweepStakes
 
         // methods (can do)
 
-
-
     }
+
+    
 }
