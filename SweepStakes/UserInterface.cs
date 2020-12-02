@@ -16,8 +16,14 @@ namespace SweepStakes
             lName = Console.ReadLine();
             OutputText("Please enter an email address");
             email = Console.ReadLine();
+
+            //need to assign a registration number
         }
 
+        public static void GetRegistrationNumber(int number)
+        {
+
+        }
          public static void OutputText(string output)
         {
             Console.WriteLine(output);
