@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    class UserInterface
+   static class UserInterface
     {
+        public static void GetUserInfo(string fName, string lName, string email)
+        {
+            OutputText("Please enter your first name");
+            fName = Console.ReadLine();
+            OutputText("Please enter your last name");
+            lName = Console.ReadLine();
+            OutputText("Please enter an email address");
+            email = Console.ReadLine();
+        }
+
+         public static void OutputText(string output)
+        {
+            Console.WriteLine(output);
+        }
     }
 }
