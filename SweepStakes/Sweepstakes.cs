@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    class Sweepstakes
+   public class Sweepstakes
     {
         //member variables (has a)
         private Dictionary<int, Contestant> contestants;
@@ -19,7 +19,7 @@ namespace SweepStakes
         public Sweepstakes(string name)
         {
             this.name = name;
-            name = Name;
+            //name = Name;
 
             Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
         }
@@ -37,19 +37,55 @@ namespace SweepStakes
             UserInterface.GetUserInputFor("Enter your email address");
             contestant.email = Console.ReadLine();
 
-            
-
-
             //need to assign registration number
             //need to validate information - display and ask user to verify that information is correct
             // if not, prompt again
             //need to validate that email is entered correctly
+            contestants.Add(GetUniqueRegistrationNum(), contestant);
         }
 
-        private int GenerateRegistrationNumber()
+         
+        public int GetUniqueRegistrationNum()
         {
-            List<int> keyList = new List<int>(contestants.Keys);
+            
+            List<int> UniqueKeys = new List<int>(contestants.Keys);
+            List<int> previousKey = new List<int>(contestants.Keys);
 
+            //foreach (KeyValuePair<int, Contestant> key in contestants)
+            //{
+              
+            //    if (previousKey.Contains(key.Key))
+            //    {
+            //        continue;
+            //    }
+            //    else
+            //    {
+            //        UniqueKeys.Add(key.Key);
+            //        previousKey.Add(key.Key);
+            //    }
+            //}
+
+            int key = 1000;
+            for (int i = 0; i < contestants.Count; i++)
+            {
+                if (contestants.Keys == null)
+                {
+                    UniqueKeys.Add(key);
+                    previousKey.Add(key);
+                }
+                else if (previousKey.Contains(key))
+                {
+                    continue;
+                }
+                else
+                {
+                    UniqueKeys.Add(key + 1);
+                    previousKey.Add(key + 1);
+                }
+            }
+
+
+            return key;
         }
 
 
@@ -68,12 +104,14 @@ namespace SweepStakes
 
         public void PrintContestantInfo(Contestant contestant)
         {
-         
+
             //foreach (KeyValuePair<int, Contestant> kvp in contestants)
             //{
-                
+
             //    Console.WriteLine = ($"Registration Number = {0}, Contestant = {1}", kvp.Key, kvp.Value);
             //}
+
+           
 
             for (int i = 0; i < contestants.Count; i++)
             {

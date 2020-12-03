@@ -8,5 +8,14 @@ namespace SweepStakes
 {
     class Simulation
     {
+        //member variables
+
+        //constructor
+
+        //methods
+        public void CreateMarketingFirmWithManager()
+        {
+
+        }
     }
 }
