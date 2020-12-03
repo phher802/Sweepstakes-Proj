@@ -17,9 +17,9 @@ namespace SweepStakes
         // methods (can do)
         public static string GetUserName()
         {
-            string fName = "";
-            string lName = "";
-            string fullName = "";
+            string fName;
+            string lName;
+            string fullName;
 
             UserInterface.GetUserInputFor("Enter your first name");
             fName = Console.ReadLine();
@@ -36,7 +36,7 @@ namespace SweepStakes
 
         public static string GetEmail()
         {
-            string email = "";
+            string email;
 
             UserInterface.GetUserInputFor("Enter your email address");
             email = Console.ReadLine();
