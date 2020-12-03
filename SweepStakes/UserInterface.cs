@@ -33,6 +33,17 @@ namespace SweepStakes
             //this.email = Console.ReadLine();
             //registrationNumber = ;
         }
+
+        public static string GetEmail()
+        {
+            string email = "";
+
+            UserInterface.GetUserInputFor("Enter your email address");
+            email = Console.ReadLine();
+
+            return email;
+
+        }
         public static String GetUserInputFor(string prompt)
         {
             CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
