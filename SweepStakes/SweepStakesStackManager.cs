@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    public class SweepStakesStackManager : ISweepstakesManager
+    public class SweepstakesStackManager : ISweepstakesManager
     {
         //member variables (has a)
         private Stack<Sweepstakes> stack;
 
         // constructor (spawner)
-        public SweepStakesStackManager()
+        public SweepstakesStackManager()
         {
-            Stack<Sweepstakes> stack = new Stack<Sweepstakes>();
+            stack = new Stack<Sweepstakes>();
         }
 
         // method (can do)
@@ -25,6 +25,7 @@ namespace SweepStakes
 
         public Sweepstakes GetSweepstakes()
         {
+          
             Sweepstakes sweepstakes;
 
             if (stack.Count > 0)
@@ -32,7 +33,6 @@ namespace SweepStakes
                 sweepstakes = stack.Pop();
                 return sweepstakes;
             }
-
 
             throw new Exception("Stack is Empty.");
         }
