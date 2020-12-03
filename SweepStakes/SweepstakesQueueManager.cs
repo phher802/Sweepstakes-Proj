@@ -11,17 +11,29 @@ namespace SweepStakes
 
         private Queue<Sweepstakes> queue;
 
-        public void InsertSweepstakes(Sweepstakes sweepstakes)
+        public SweepstakesQueueManager()
         {
-
+            queue = new Queue<Sweepstakes>();
         }
 
-        //public Sweepstakes GetSweepstakes()
-        //{
-            
-        //    return ;
+        public void InsertSweepstakes(Sweepstakes sweepstakes)
+        {
+            queue.Enqueue(sweepstakes);
+        }
 
-        //}
+        public Sweepstakes GetSweepstakes()
+        {
+            Sweepstakes sweepstakes;
+
+            if (queue.Count>0)
+            {
+                sweepstakes = queue.Dequeue();
+                return sweepstakes;
+            }
+
+            throw new Exception("Queue is empty.");
+
+        }
 
 
     }

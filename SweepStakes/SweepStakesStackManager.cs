@@ -25,7 +25,7 @@ namespace SweepStakes
 
         public Sweepstakes GetSweepstakes()
         {
-          
+         
             Sweepstakes sweepstakes;
 
             if (stack.Count > 0)
@@ -33,7 +33,6 @@ namespace SweepStakes
                 sweepstakes = stack.Pop();
                 return sweepstakes;
             }
-
             throw new Exception("Stack is Empty.");
         }
 
