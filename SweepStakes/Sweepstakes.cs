@@ -34,24 +34,13 @@ namespace SweepStakes
        
             contestants.Add(contestant.registrationNumber, contestant);
 
-            //UserInterface.GetUserInputFor("Enter your first name");
-            //contestant.fName = Console.ReadLine();
-            //UserInterface.GetUserInputFor("Enter your last name");
-            //contestant.lName = Console.ReadLine();
-            //UserInterface.GetUserInputFor("Enter your email address");
-            //contestant.email = Console.ReadLine();
-
-
-            //need to assign registration number
-            //need to validate information - display and ask user to verify that information is correct
-            // if not, prompt again
-            //need to validate that email is entered correctly
-
+         
+            //??need to validate information - display and ask user to verify that information is correct
+            //?? if not, prompt again
+         
         }
 
-         
-    
-
+        
         public Contestant PickWinner()
         {
             //bool isWinner = false;
@@ -68,18 +57,8 @@ namespace SweepStakes
 
         public void PrintContestantInfo(Contestant contestant)
         {
+            UserInterface.PrintContestantInfo(contestants, contestant);
 
-            //foreach (KeyValuePair<int, Contestant> kvp in contestants)
-            //{
-
-            //    Console.WriteLine = ($"Registration Number = {0}, Contestant = {1}", kvp.Key, kvp.Value);
-            //}
-
-           
-            for (int i = 0; i < contestants.Count; i++)
-            {
-                Console.WriteLine(contestant);
-            }
         }
     }
 }

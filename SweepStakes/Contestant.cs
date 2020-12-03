@@ -21,7 +21,8 @@ namespace SweepStakes
             fName = UserInterface.GetUserFirstName();
             lName = UserInterface.GetUserLastName();
             email = UserInterface.GetEmail();
-            //registrationNumber = UserInterface.GetUniqueRegistrationNum(contestants);      
+            //registrationNumber = UserInterface.GetUniqueRegistrationNum(contestants);   
+            //need to validate that email is entered correctly??
         }
 
 

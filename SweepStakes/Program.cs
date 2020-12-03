@@ -10,24 +10,12 @@ namespace SweepStakes
     {
         static void Main(string[] args)
         {
-            Sweepstakes sweepstakes = new Sweepstakes("Maldive Trip");
+            Simulation simulation = new Simulation();
+            simulation.CreateMarketingFirmWithManager();
 
 
-            Contestant contestant = new Contestant();
-            sweepstakes.RegisterContestant(contestant);
-
-
-            
         }
 
-        public void Run()
-        {
-            AddNumberToTen(int);
-        }
-
-        public void AddNumberToTen(int numb)
-        {
-            Console.WriteLine(numb + 10);
-        }
+    
     }
 }

@@ -24,7 +24,7 @@ namespace SweepStakes
             stack.Push(sweepstakes);
         }
 
-        //is is also another abstract method from the ISweekstakes interface, used to place the last item in the stack
+        //is is also another abstract method from the ISweekstakes interface, used to remove the last item in the stack
         // and throws an exception if the stack is empty.
         public Sweepstakes GetSweepstakes()
         {

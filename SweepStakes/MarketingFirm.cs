@@ -9,10 +9,11 @@ namespace SweepStakes
     public class MarketingFirm
     {
         ISweepstakesManager _manager;
+        public Sweepstakes sweepstakes;
 
         //constructor
         //this constructor injection lets the marketing firm handle either the queueManager or StackManager, 
-        //or anything that is a manager
+        //or anything that is a manager class
         public MarketingFirm(ISweepstakesManager _manager)
         {
             this._manager = _manager; 
@@ -22,8 +23,8 @@ namespace SweepStakes
         // method
         public void CreateSweepstake(string name)
         {
-            Sweepstakes sweepstakes = new Sweepstakes(name);
-
+            sweepstakes = new Sweepstakes(name);
+            
         }
 
     }
