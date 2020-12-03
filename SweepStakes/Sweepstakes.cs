@@ -18,7 +18,9 @@ namespace SweepStakes
         //constructor (spawner)
         public Sweepstakes(string name)
         {
-            this.name = Name;
+            this.name = name;
+            name = Name;
+
             Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
         }
 
@@ -35,16 +37,20 @@ namespace SweepStakes
             UserInterface.GetUserInputFor("Enter your email address");
             contestant.email = Console.ReadLine();
 
+            
+
+
             //need to assign registration number
             //need to validate information - display and ask user to verify that information is correct
             // if not, prompt again
             //need to validate that email is entered correctly
         }
 
-        //private int GenerateRegistrationNumber()
-        //{
+        private int GenerateRegistrationNumber()
+        {
+            List<int> keyList = new List<int>(contestants.Keys);
 
-        //}
+        }
 
 
         public Contestant PickWinner()
@@ -62,7 +68,17 @@ namespace SweepStakes
 
         public void PrintContestantInfo(Contestant contestant)
         {
+         
+            //foreach (KeyValuePair<int, Contestant> kvp in contestants)
+            //{
+                
+            //    Console.WriteLine = ($"Registration Number = {0}, Contestant = {1}", kvp.Key, kvp.Value);
+            //}
 
+            for (int i = 0; i < contestants.Count; i++)
+            {
+                Console.WriteLine(contestant);
+            }
         }
     }
 }
