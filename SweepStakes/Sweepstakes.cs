@@ -29,66 +29,28 @@ namespace SweepStakes
         // methods (can do)
         public void RegisterContestant(Contestant contestant)
         {
-        
-            UserInterface.GetUserInputFor("Enter your first name");
-            contestant.fName = Console.ReadLine();
-            UserInterface.GetUserInputFor("Enter your last name");
-            contestant.lName = Console.ReadLine();
-            UserInterface.GetUserInputFor("Enter your email address");
-            contestant.email = Console.ReadLine();
-            
-           
+
+            contestant.registrationNumber = contestants.Count;
+       
+            contestants.Add(contestant.registrationNumber, contestant);
+
+            //UserInterface.GetUserInputFor("Enter your first name");
+            //contestant.fName = Console.ReadLine();
+            //UserInterface.GetUserInputFor("Enter your last name");
+            //contestant.lName = Console.ReadLine();
+            //UserInterface.GetUserInputFor("Enter your email address");
+            //contestant.email = Console.ReadLine();
+
+
             //need to assign registration number
             //need to validate information - display and ask user to verify that information is correct
             // if not, prompt again
             //need to validate that email is entered correctly
-            contestants.Add(GetUniqueRegistrationNum(), contestant);
+
         }
 
          
-        public int GetUniqueRegistrationNum()
-        {
-            
-            List<int> UniqueKeys = new List<int>(contestants.Keys);
-            List<int> previousKey = new List<int>(contestants.Keys);
-
-            //foreach (KeyValuePair<int, Contestant> key in contestants)
-            //{
-              
-            //    if (previousKey.Contains(key.Key))
-            //    {
-            //        continue;
-            //    }
-            //    else
-            //    {
-            //        UniqueKeys.Add(key.Key);
-            //        previousKey.Add(key.Key);
-            //    }
-            //}
-
-            int key = 1000;
-            for (int i = 0; i < contestants.Count; i++)
-            {
-                if (contestants.Keys == null)
-                {
-                    UniqueKeys.Add(key);
-                    previousKey.Add(key);
-                }
-                else if (previousKey.Contains(key))
-                {
-                    continue;
-                }
-                else
-                {
-                    UniqueKeys.Add(key + 1);
-                    previousKey.Add(key + 1);
-                }
-            }
-
-
-            return key;
-        }
-
+    
 
         public Contestant PickWinner()
         {
@@ -98,8 +60,9 @@ namespace SweepStakes
             //List<int> keyList = new List<int>(contestants.Keys);
             List<Contestant> valueList = new List<Contestant>(contestants.Values);
 
-            Contestant randomKey = valueList[rand.Next(valueList.Count)];
-            return randomKey;
+            Contestant winner = valueList[rand.Next(valueList.Count)];
+
+            return winner;
 
         }
 
@@ -113,7 +76,6 @@ namespace SweepStakes
             //}
 
            
-
             for (int i = 0; i < contestants.Count; i++)
             {
                 Console.WriteLine(contestant);
