@@ -47,56 +47,17 @@ namespace SweepStakes
             return email;
         }
 
-        public static int GetUniqueRegistrationNum(Dictionary<int, Contestant> dict)
-        {
-
-            List<int> UniqueKeys = new List<int>(dict.Keys);
-            List<int> previousKey = new List<int>(dict.Keys);
-
-            int key = 1000;
-            foreach (KeyValuePair<int, Contestant> k in dict)
+       public static void PrintContestantInfo(Dictionary<int, Contestant> dict)
+        {     
+    
+            foreach (KeyValuePair<int, Contestant> kvp in dict)
             {
-
-                if (dict.Keys == null)
-                {
-                    UniqueKeys.Add(key);
-                    previousKey.Add(key);
-                }
-                else if (previousKey.Contains(key))
-                {
-                    continue;
-                }
-                else
-                {
-                    UniqueKeys.Add(key + 1);
-                    previousKey.Add(key + 1);
-                }
-
-               
+                Console.WriteLine(kvp.Key.ToString(), kvp.Value);
             }
-            return key;
-            //int key = 1000;
-            //for (int i = 0; i < dict.Count; i++)
-            //{
-            //    if (dict.Keys == null)
-            //    {
-            //        UniqueKeys.Add(key);
-            //        previousKey.Add(key);
-            //    }
-            //    else if (previousKey.Contains(key))
-            //    {
-            //        continue;
-            //    }
-            //    else
-            //    {
-            //        UniqueKeys.Add(key + 1);
-            //        previousKey.Add(key + 1);
-            //    }
-            //}
+          
 
-            
-            
         }
+
         public static String GetUserInputFor(string prompt)
         {
             CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
