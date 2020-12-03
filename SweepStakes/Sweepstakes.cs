@@ -22,7 +22,20 @@ namespace SweepStakes
 
 
         // methods (can do)
-        public void RegisterConstestant(Contestant constestant)
+        public void RegisterConstestant(Contestant contestant)
+        {
+            UserInterface.GetUserInputFor("Enter your first name");
+            contestant.fName = Console.ReadLine();
+            UserInterface.GetUserInputFor("Enter your last name");
+            contestant.lName = Console.ReadLine();
+            UserInterface.GetUserInputFor("Enter your email address");
+            contestant.email = Console.ReadLine();
+
+
+
+        }
+
+        private int GenerateRegistrationNumber(int registrationNumber)
         {
 
         }
