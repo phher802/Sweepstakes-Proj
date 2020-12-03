@@ -36,7 +36,8 @@ namespace SweepStakes
             contestant.lName = Console.ReadLine();
             UserInterface.GetUserInputFor("Enter your email address");
             contestant.email = Console.ReadLine();
-
+            
+           
             //need to assign registration number
             //need to validate information - display and ask user to verify that information is correct
             // if not, prompt again
