@@ -16,11 +16,14 @@ namespace SweepStakes
             queue = new Queue<Sweepstakes>();
         }
 
+        //Use an abstract methods from the ISweepstakes interface to create a method to add to the queue
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
             queue.Enqueue(sweepstakes);
         }
 
+        //is is also another abstract method from the ISweekstakes interface, used to remove the first item in the queue
+        // and throws an exception if the queue is empty.
         public Sweepstakes GetSweepstakes()
         {
             Sweepstakes sweepstakes;
