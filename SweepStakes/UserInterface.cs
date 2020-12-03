@@ -15,23 +15,26 @@ namespace SweepStakes
         // constructor (spawner)
 
         // methods (can do)
-        public static string GetUserName()
+        public static string GetUserFirstName()
         {
             string fName;
-            string lName;
-            string fullName;
-
+      
             UserInterface.GetUserInputFor("Enter your first name");
             fName = Console.ReadLine();
-            UserInterface.GetUserInputFor("Enter your last name");
-            lName = Console.ReadLine();
-            fullName = fName + lName;
-
-            return fullName;
+          
+            return fName;
             
             //UserInterface.GetUserInputFor("Enter your email address");
             //this.email = Console.ReadLine();
             //registrationNumber = ;
+        }
+
+        public static string GetUserLastName()
+        {
+            string lName;
+            UserInterface.GetUserInputFor("Enter your last name");
+            lName = Console.ReadLine();
+            return lName;
         }
 
         public static string GetEmail()
@@ -42,7 +45,57 @@ namespace SweepStakes
             email = Console.ReadLine();
 
             return email;
+        }
 
+        public static int GetUniqueRegistrationNum(Dictionary<int, Contestant> dict)
+        {
+
+            List<int> UniqueKeys = new List<int>(dict.Keys);
+            List<int> previousKey = new List<int>(dict.Keys);
+
+            int key = 1000;
+            foreach (KeyValuePair<int, Contestant> k in dict)
+            {
+
+                if (dict.Keys == null)
+                {
+                    UniqueKeys.Add(key);
+                    previousKey.Add(key);
+                }
+                else if (previousKey.Contains(key))
+                {
+                    continue;
+                }
+                else
+                {
+                    UniqueKeys.Add(key + 1);
+                    previousKey.Add(key + 1);
+                }
+
+               
+            }
+            return key;
+            //int key = 1000;
+            //for (int i = 0; i < dict.Count; i++)
+            //{
+            //    if (dict.Keys == null)
+            //    {
+            //        UniqueKeys.Add(key);
+            //        previousKey.Add(key);
+            //    }
+            //    else if (previousKey.Contains(key))
+            //    {
+            //        continue;
+            //    }
+            //    else
+            //    {
+            //        UniqueKeys.Add(key + 1);
+            //        previousKey.Add(key + 1);
+            //    }
+            //}
+
+            
+            
         }
         public static String GetUserInputFor(string prompt)
         {
@@ -73,47 +126,6 @@ namespace SweepStakes
         
     }
 
-    public static void GetUniqueRegistrationNum()
-    {
-        
-        List<int> UniqueKeys = new List<int>(Keys);
-        List<int> previousKey = new List<int>(Keys);
-
-        //foreach (KeyValuePair<int, Contestant> key in contestants)
-        //{
-
-        //    if (previousKey.Contains(key.Key))
-        //    {
-        //        continue;
-        //    }
-        //    else
-        //    {
-        //        UniqueKeys.Add(key.Key);
-        //        previousKey.Add(key.Key);
-        //    }
-        //}
-
-        int key = 1000;
-        for (int i = 0; i < dict.Count; i++)
-        {
-            if (dict.Keys == null)
-            {
-                UniqueKeys.Add(key);
-                previousKey.Add(key);
-            }
-            else if (previousKey.Contains(key))
-            {
-                continue;
-            }
-            else
-            {
-                UniqueKeys.Add(key + 1);
-                previousKey.Add(key + 1);
-            }
-        }
-
-
-        return key;
-    }
+ 
 
 }

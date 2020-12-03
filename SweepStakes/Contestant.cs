@@ -16,17 +16,14 @@ namespace SweepStakes
 
 
         // constructor (spawner)
-        public Contestant(string fName, string lName, string email, int registrationNumber)
+        public Contestant()
         {
-            this.fName = fName;
-            this.lName = lName;
-            this.email = email;
-            this.registrationNumber = registrationNumber;
-
+            fName = UserInterface.GetUserFirstName();
+            lName = UserInterface.GetUserLastName();
+            email = UserInterface.GetEmail();
+            //registrationNumber = UserInterface.GetUniqueRegistrationNum(contestants);      
         }
 
-
-        // methods (can do)
 
     }
 
