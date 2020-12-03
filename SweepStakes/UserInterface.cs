@@ -18,12 +18,12 @@ namespace SweepStakes
         public static string GetUserFirstName()
         {
             string fName;
-      
+
             UserInterface.GetUserInputFor("Enter your first name");
             fName = Console.ReadLine();
-          
+
             return fName;
-            
+
             //UserInterface.GetUserInputFor("Enter your email address");
             //this.email = Console.ReadLine();
             //registrationNumber = ;
@@ -47,14 +47,21 @@ namespace SweepStakes
             return email;
         }
 
-       public static void PrintContestantInfo(Dictionary<int, Contestant> dict)
-        {     
-    
-            foreach (KeyValuePair<int, Contestant> kvp in dict)
+        public static void PrintContestantInfo(Dictionary<int, Contestant> dict, Contestant contestant)
+        {
+            for (int i = 0; i < dict.Count; i++)
             {
-                Console.WriteLine(kvp.Key.ToString(), kvp.Value);
+                dict[i] = contestant;
+                Console.WriteLine(contestant);
             }
-          
+             
+
+            //foreach (KeyValuePair<int, Contestant> kvp in dict)
+            //{
+            //    contestant.Value = (kvp.Key.ToString(), kvp.Value);
+               
+            //}
+
 
         }
 
@@ -64,13 +71,13 @@ namespace SweepStakes
             TextInfo textInfo = cultureInfo.TextInfo;
             string fName = "";
             string lName = "";
-      
+
 
             Console.WriteLine(prompt);
-            
+
             string input = Console.ReadLine();
 
-            if ((prompt == fName) || (prompt == lName) )
+            if ((prompt == fName) || (prompt == lName))
             {
                 return (textInfo.ToTitleCase(input));
             }
@@ -79,14 +86,14 @@ namespace SweepStakes
                 return input;
             }
 
-          
+
             //Console.WriteLine(textInfo.ToTitleCase(input));
             //return (textInfo.ToTitleCase(input));
         }
 
-        
+
     }
 
- 
+
 
 }
