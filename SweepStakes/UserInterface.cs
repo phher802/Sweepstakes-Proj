@@ -54,12 +54,12 @@ namespace Sweepstakes
                 dict[i] = contestant;
                 Console.WriteLine(contestant);
             }
-             
+
 
             //foreach (KeyValuePair<int, Contestant> kvp in dict)
             //{
             //    contestant.Value = (kvp.Key.ToString(), kvp.Value);
-               
+
             //}
 
 
@@ -102,17 +102,23 @@ namespace Sweepstakes
                     return new SweepstakesStackManager();
                 case "queue":
                     return new SweepstakesQueueManager();
-                
+
                 default:
                     Console.WriteLine("Invalid Input");
                     return ChooseAManager(manager);
-                   
+
             }
 
 
         }
 
+        public static void NotifyWinner(Contestant email)
+        {
 
+            Console.WriteLine("\nCongratulations!! You've won the prize!!!!! ");
+            Console.WriteLine("\nA separate email will be sent shortly with instructions on how to claim your prize.");
+
+        }
     }
 
 
