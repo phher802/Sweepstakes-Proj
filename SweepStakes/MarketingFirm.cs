@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    public class MarketingFirm
+    public class MarketingFirm : IObserver
     {
         ISweepstakesManager _manager;
         public Sweepstakes sweepstakes;
@@ -40,5 +40,11 @@ namespace Sweepstakes
         //7. contact winner
         //8. send mailkit API to winner
         //9. announce the winner too all contestants
+
+        public void Update(ISubject sweepstakes)
+        {
+           Console.WriteLine($"The winner of the sweepstakes goes to {contestant}!");
+        }
+
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SweepStakes
+namespace Sweepstakes
 {
     public class SweepstakesStackManager : ISweepstakesManager
     {
@@ -27,8 +27,7 @@ namespace SweepStakes
         //is is also another abstract method from the ISweekstakes interface, used to remove the last item in the stack
         // and throws an exception if the stack is empty.
         public Sweepstakes GetSweepstakes()
-        {
-         
+        {     
             Sweepstakes sweepstakes;
 
             if (stack.Count > 0)
@@ -36,6 +35,7 @@ namespace SweepStakes
                 sweepstakes = stack.Pop();
                 return sweepstakes;
             }
+
             throw new Exception("Stack is Empty.");
         }
 

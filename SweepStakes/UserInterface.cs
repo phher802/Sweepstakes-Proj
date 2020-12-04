@@ -55,14 +55,6 @@ namespace Sweepstakes
                 Console.WriteLine(contestant);
             }
 
-
-            //foreach (KeyValuePair<int, Contestant> kvp in dict)
-            //{
-            //    contestant.Value = (kvp.Key.ToString(), kvp.Value);
-
-            //}
-
-
         }
 
         public static String GetUserInputFor(string prompt)
@@ -71,7 +63,6 @@ namespace Sweepstakes
             TextInfo textInfo = cultureInfo.TextInfo;
             string fName = "";
             string lName = "";
-
 
             Console.WriteLine(prompt);
 
@@ -87,10 +78,9 @@ namespace Sweepstakes
             }
 
 
-            //Console.WriteLine(textInfo.ToTitleCase(input));
-            //return (textInfo.ToTitleCase(input));
         }
 
+        //used interface injection here to implement the factory design pattern: let marketing firm choose which manager they want to use
         public static ISweepstakesManager ChooseAManager(string manager)
         {
             GetUserInputFor("Please chose either a stack manager or a queue manager.");
@@ -109,12 +99,11 @@ namespace Sweepstakes
 
             }
 
-
         }
 
         public static void NotifyWinner(Contestant email)
         {
-
+            
             Console.WriteLine("\nCongratulations!! You've won the prize!!!!! ");
             Console.WriteLine("\nA separate email will be sent shortly with instructions on how to claim your prize.");
 
