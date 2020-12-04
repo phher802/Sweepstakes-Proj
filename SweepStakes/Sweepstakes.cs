@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-   public class Sweepstakes
+   public class Sweepstakes : ISubject
     {
         //member variables (has a)
         private Dictionary<int, Contestant> contestants;
         private string name;
         public string Name;
         private Random random;
+        private List<IObserver> _observers;
+        bool isAWinner;
 
         //constructor (spawner)
         public Sweepstakes(string Name)
@@ -22,6 +24,7 @@ namespace Sweepstakes
             //name = Name;
 
             contestants = new Dictionary<int, Contestant>();
+            _observers = new List<IObserver>();
         }
 
 
@@ -60,5 +63,22 @@ namespace Sweepstakes
             UserInterface.PrintContestantInfo(contestants, contestant);
 
         }
+        public void Add(IObserver observer)
+        {
+            _observers.Add(observer);
+        }
+        public void Remove(IObserver observer)
+        {
+            _observers.Remove(observer);
+        }
+        public void Notify()
+        {
+            foreach (IObserver o in _observers)
+            {
+                o.Update(this);
+            }
+        }
+
+
     }
 }
