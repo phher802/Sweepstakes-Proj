@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace SweepStakes
+namespace Sweepstakes
 {
     public static class UserInterface
     {
@@ -91,7 +91,28 @@ namespace SweepStakes
             //return (textInfo.ToTitleCase(input));
         }
 
-     
+        public static ISweepstakesManager ChooseAManager(string manager)
+        {
+            GetUserInputFor("Please chose either a stack manager or a queue manager.");
+            manager = Console.ReadLine().ToLower();
+
+            switch (manager)
+            {
+                case "stack":
+                    return new SweepstakesStackManager();
+                case "queue":
+                    return new SweepstakesQueueManager();
+                
+                default:
+                    Console.WriteLine("Invalid Input");
+                    return ChooseAManager(manager);
+                   
+            }
+
+
+        }
+
+
     }
 
 

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SweepStakes
+namespace Sweepstakes
 {
    public class Sweepstakes
     {
@@ -16,12 +16,12 @@ namespace SweepStakes
         private Random random;
 
         //constructor (spawner)
-        public Sweepstakes(string name)
+        public Sweepstakes(string Name)
         {
-            this.name = name;
+            this.name = Name;
             //name = Name;
 
-            Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
+            contestants = new Dictionary<int, Contestant>();
         }
 
 
